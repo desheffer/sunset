@@ -1,0 +1,16 @@
+{
+  "name": "sunset",
+  "version": "0.0.1",
+  "main": "style.css",
+  "ignore": [
+    ".jshintrc",
+    "**/*.txt",
+    "node_modules",
+    "bower_components"
+  ],
+  "devDependencies": {
+    "bootstrap": "~3.3.2",
+    "firebase": "~2.2.2",
+    "jquery": "~2.1.3"
+  }
+}

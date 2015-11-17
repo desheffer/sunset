@@ -1,0 +1,47 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:100,400);
+
+html {
+    /* background: url(background.jpg) no-repeat center center fixed; */
+    background: #fff;
+    background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
+}
+
+body {
+    background: none;
+    font-family: 'Lato';
+    margin: 5em auto;
+}
+
+h1 {
+    font-size: 6em;
+    font-weight: 100;
+    margin: 0 0 0.5em 0;
+}
+
+div.pane {
+    /* background-color: rgba(255, 255, 255, 0.6); */
+    background-color: #eee;
+    border: 1px solid #ddd;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+}
+
+div.row.line {
+    line-height: 34px;
+    margin-top: 1em;
+}
+
+div.row.total {
+    font-size: 2em;
+    font-weight: 100;
+    margin-top: 2em;
+}
+
+div.row.total span.value {
+    border-bottom: 1px solid #ccc;
+    font-size: 2em;
+    padding: 0 0.1em;
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+
+        <title>Sunset point calculator</title>
+
+        <link rel="stylesheet" href="dist/vendor.min.css">
+        <link rel="stylesheet" href="dist/sunset.min.css">
+    </head>
+
+    <body>
+        <div class="col-md-4 col-md-offset-4 pane">
+            <header>
+                <h1 class="text-center">&ldquo;Sunset&rdquo;</h1>
+            </header>
+
+            <div class="row line">
+                <div class="col-xs-6">
+                    <u>S</u>ize
+                </div>
+                <div class="col-xs-6 text-right">
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-default active">
+                            <input type="radio" name="size" value="0" checked /> 0
+                        </label>
+                        <label class="btn btn-default">
+                            <input type="radio" name="size" value="1" /> 1
+                        </label>
+                        <label class="btn btn-default">
+                            <input type="radio" name="size" value="2" /> 2
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row line">
+                <div class="col-xs-6">
+                    <u>Un</u>certainty
+                </div>
+                <div class="col-xs-6 text-right">
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-default active">
+                            <input type="radio" name="uncertainty" value="0" checked /> 0
+                        </label>
+                        <label class="btn btn-default">
+                            <input type="radio" name="uncertainty" value="1" /> 1
+                        </label>
+                        <label class="btn btn-default">
+                            <input type="radio" name="uncertainty" value="2" /> 2
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row line">
+                <div class="col-xs-6">
+                    <u>S</u>ide <u>E</u>ffects
+                </div>
+                <div class="col-xs-6 text-right">
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-default active">
+                            <input type="radio" name="sideeffects" value="0" checked /> 0
+                        </label>
+                        <label class="btn btn-default">
+                            <input type="radio" name="sideeffects" value="1" /> 1
+                        </label>
+                        <label class="btn btn-default">
+                            <input type="radio" name="sideeffects" value="2" /> 2
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row line">
+                <div class="col-xs-6">
+                    <u>T</u>esting
+                </div>
+                <div class="col-xs-6 text-right">
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-default active">
+                            <input type="radio" name="testing" value="0" checked /> 0
+                        </label>
+                        <label class="btn btn-default">
+                            <input type="radio" name="testing" value="1" /> 1
+                        </label>
+                        <label class="btn btn-default">
+                            <input type="radio" name="testing" value="2" /> 2
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row total">
+                <div class="col-xs-12 text-center">
+                    <span class="value" id="total">0.5</span> sprint point<span id="total-plural">s</span>
+                </div>
+            </div>
+        </div>
+
+        <script src="dist/vendor.min.js"></script>
+        <script src="dist/sunset.min.js"></script>
+    </body>
+</html>
