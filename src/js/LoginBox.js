@@ -12,8 +12,10 @@
 
         function updateLinks() {
             if (user) {
+                $('body').addClass('logged-in');
                 box.find('.username').text(user.displayName);
             } else {
+                $('body').removeClass('logged-in');
                 box.find('.username').text('---------');
             }
 

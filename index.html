@@ -16,137 +16,141 @@
     <body>
         <div class="container">
             <div id="login-box" class="row">
-                <div class="col-md-8 col-md-offset-2 text-right">
+                <div class="col-md-12 col-lg-8 col-lg-offset-2 text-right">
                     <span class="username">----------</span> |
                     <span class="links">------</span>
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <header>
+            <header>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
                         <h1 class="text-center">&ldquo;Sunset&rdquo;</h1>
-                    </header>
-                </div>
-            </div>
-
-            <div id="point-box" class="col-md-4 col-md-offset-2">
-                <div class="calc-box box">
-                    <div class="row">
-                        <div class="col-xs-6">
-                            <u>S</u>ize
-                        </div>
-                        <div class="col-xs-6 text-right">
-                            <div class="btn-group" data-toggle="buttons">
-                                <label class="btn btn-default active">
-                                    <input type="radio" name="size" value="0" checked /> 0
-                                </label>
-                                <label class="btn btn-default">
-                                    <input type="radio" name="size" value="1" /> 1
-                                </label>
-                                <label class="btn btn-default">
-                                    <input type="radio" name="size" value="2" /> 2
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-xs-6">
-                            <u>Un</u>certainty
-                        </div>
-                        <div class="col-xs-6 text-right">
-                            <div class="btn-group" data-toggle="buttons">
-                                <label class="btn btn-default active">
-                                    <input type="radio" name="uncertainty" value="0" checked /> 0
-                                </label>
-                                <label class="btn btn-default">
-                                    <input type="radio" name="uncertainty" value="1" /> 1
-                                </label>
-                                <label class="btn btn-default">
-                                    <input type="radio" name="uncertainty" value="2" /> 2
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-xs-6">
-                            <u>S</u>ide <u>E</u>ffects
-                        </div>
-                        <div class="col-xs-6 text-right">
-                            <div class="btn-group" data-toggle="buttons">
-                                <label class="btn btn-default active">
-                                    <input type="radio" name="sideeffects" value="0" checked /> 0
-                                </label>
-                                <label class="btn btn-default">
-                                    <input type="radio" name="sideeffects" value="1" /> 1
-                                </label>
-                                <label class="btn btn-default">
-                                    <input type="radio" name="sideeffects" value="2" /> 2
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-xs-6">
-                            <u>T</u>esting
-                        </div>
-                        <div class="col-xs-6 text-right">
-                            <div class="btn-group" data-toggle="buttons">
-                                <label class="btn btn-default active">
-                                    <input type="radio" name="testing" value="0" checked /> 0
-                                </label>
-                                <label class="btn btn-default">
-                                    <input type="radio" name="testing" value="1" /> 1
-                                </label>
-                                <label class="btn btn-default">
-                                    <input type="radio" name="testing" value="2" /> 2
-                                </label>
-                            </div>
-                        </div>
                     </div>
                 </div>
+            </header>
 
-                <div class="total-box box">
-                    <div class="row">
-                        <div class="col-xs-12 text-center total">
-                            <span class="value">--</span> point<span class="plural">s</span>
+            <div class="row content">
+                <div class="login">Please log in</div>
+
+                <div id="point-box" class="col-md-6 col-lg-4 col-lg-offset-2">
+                    <div class="calc-box box">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <u>S</u>ize
+                            </div>
+                            <div class="col-xs-6 text-right">
+                                <div class="btn-group" data-toggle="buttons">
+                                    <label class="btn btn-default active">
+                                        <input type="radio" name="size" value="0" checked /> Low
+                                    </label>
+                                    <label class="btn btn-default">
+                                        <input type="radio" name="size" value="1" /> Med
+                                    </label>
+                                    <label class="btn btn-default">
+                                        <input type="radio" name="size" value="2" /> High
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <u>Un</u>certainty
+                            </div>
+                            <div class="col-xs-6 text-right">
+                                <div class="btn-group" data-toggle="buttons">
+                                    <label class="btn btn-default active">
+                                        <input type="radio" name="uncertainty" value="0" checked /> Low
+                                    </label>
+                                    <label class="btn btn-default">
+                                        <input type="radio" name="uncertainty" value="1" /> Med
+                                    </label>
+                                    <label class="btn btn-default">
+                                        <input type="radio" name="uncertainty" value="2" /> High
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <u>S</u>ide <u>E</u>ffects
+                            </div>
+                            <div class="col-xs-6 text-right">
+                                <div class="btn-group" data-toggle="buttons">
+                                    <label class="btn btn-default active">
+                                        <input type="radio" name="sideeffects" value="0" checked /> Low
+                                    </label>
+                                    <label class="btn btn-default">
+                                        <input type="radio" name="sideeffects" value="1" /> Med
+                                    </label>
+                                    <label class="btn btn-default">
+                                        <input type="radio" name="sideeffects" value="2" /> High
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <u>T</u>esting
+                            </div>
+                            <div class="col-xs-6 text-right">
+                                <div class="btn-group" data-toggle="buttons">
+                                    <label class="btn btn-default active">
+                                        <input type="radio" name="testing" value="0" checked /> Low
+                                    </label>
+                                    <label class="btn btn-default">
+                                        <input type="radio" name="testing" value="1" /> Med
+                                    </label>
+                                    <label class="btn btn-default">
+                                        <input type="radio" name="testing" value="2" /> High
+                                    </label>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-xs-12 text-center">
-                            <button class="btn send-alt">???</button>
-                            <button class="btn send-alt">Split</button>
-                            <button class="btn btn-success send">Send</button>
+
+                    <div class="total-box box">
+                        <div class="row">
+                            <div class="col-xs-12 text-center total">
+                                <span class="value">--</span> point<span class="plural">s</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 text-center">
+                                <button class="btn send-alt">???</button>
+                                <button class="btn send-alt">Split</button>
+                                <button class="btn btn-success send">Send</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div id="social-box" class="col-md-4">
-                <div class="social-box box">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <td width="75%">User</td>
-                                        <td width="25%" class="text-right">Points</td>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                <div id="social-box" class="col-md-6 col-lg-4">
+                    <div class="social-box box">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <td width="75%">User</td>
+                                            <td width="25%" class="text-right">Points</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 text-right">
-                            <button class="btn btn-warning btn-sm clear">Clear</button>
+                        <div class="row">
+                            <div class="col-xs-12 text-right">
+                                <button class="btn btn-warning btn-sm clear">Clear</button>
+                            </div>
                         </div>
                     </div>
                 </div>

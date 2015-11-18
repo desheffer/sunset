@@ -1,4 +1,5 @@
 /* global Firebase: false */
+/* global alert: false */
 (function(Firebase) {
     'use strict';
 
@@ -50,6 +51,7 @@
 
         this.pointsChanged = function(e) {
             if (!presence || !user) {
+                alert('Please log in first!');
                 return;
             }
 

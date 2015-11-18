@@ -38,10 +38,27 @@ div.total-box div.row span.value {
     padding: 0 0.1em;
 }
 
-div.social-box table {
-    min-height: 20em;
-}
-
 div.social-box table tbody td {
     font-size: 1.5em;
+}
+
+div.content {
+    position: relative;
+}
+
+div.content div.login {
+    background-color: rgba(255, 255, 255, 0.75);
+    bottom: 0;
+    font-size: 4em;
+    left: 0;
+    padding: 2em;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    z-index: 99;
+}
+
+body.logged-in div.content div.login {
+    display: none;
 }
