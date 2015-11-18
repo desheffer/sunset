@@ -16,7 +16,7 @@
     <body>
         <div class="container">
             <div id="login-box" class="row">
-                <div class="col-md-12 col-lg-8 col-lg-offset-2 text-right">
+                <div class="col-md-12 text-right">
                     <span class="username">----------</span> |
                     <span class="links">------</span>
                 </div>
@@ -33,7 +33,7 @@
             <div class="row content">
                 <div class="login">Please log in</div>
 
-                <div id="point-box" class="col-md-6 col-lg-4 col-lg-offset-2">
+                <div id="point-box" class="col-md-6">
                     <div class="calc-box box">
                         <div class="row">
                             <div class="col-xs-6">
@@ -42,13 +42,19 @@
                             <div class="col-xs-6 text-right">
                                 <div class="btn-group" data-toggle="buttons">
                                     <label class="btn btn-default active">
-                                        <input type="radio" name="size" value="0" checked /> Low
+                                        <input type="radio" name="size" value="0" checked />
+                                        <div class="emoji">😀</div>
+                                        Low
                                     </label>
                                     <label class="btn btn-default">
-                                        <input type="radio" name="size" value="1" /> Med
+                                        <input type="radio" name="size" value="1" />
+                                        <div class="emoji">😐</div>
+                                        Med
                                     </label>
                                     <label class="btn btn-default">
-                                        <input type="radio" name="size" value="2" /> High
+                                        <input type="radio" name="size" value="2" />
+                                        <div class="emoji">😟</div>
+                                        High
                                     </label>
                                 </div>
                             </div>
@@ -61,13 +67,19 @@
                             <div class="col-xs-6 text-right">
                                 <div class="btn-group" data-toggle="buttons">
                                     <label class="btn btn-default active">
-                                        <input type="radio" name="uncertainty" value="0" checked /> Low
+                                        <input type="radio" name="uncertainty" value="0" checked />
+                                        <div class="emoji">😀</div>
+                                        Low
                                     </label>
                                     <label class="btn btn-default">
-                                        <input type="radio" name="uncertainty" value="1" /> Med
+                                        <input type="radio" name="uncertainty" value="1" />
+                                        <div class="emoji">😐</div>
+                                        Med
                                     </label>
                                     <label class="btn btn-default">
-                                        <input type="radio" name="uncertainty" value="2" /> High
+                                        <input type="radio" name="uncertainty" value="2" />
+                                        <div class="emoji">😟</div>
+                                        High
                                     </label>
                                 </div>
                             </div>
@@ -80,13 +92,19 @@
                             <div class="col-xs-6 text-right">
                                 <div class="btn-group" data-toggle="buttons">
                                     <label class="btn btn-default active">
-                                        <input type="radio" name="sideeffects" value="0" checked /> Low
+                                        <input type="radio" name="sideeffects" value="0" checked />
+                                        <div class="emoji">😀</div>
+                                        Low
                                     </label>
                                     <label class="btn btn-default">
-                                        <input type="radio" name="sideeffects" value="1" /> Med
+                                        <input type="radio" name="sideeffects" value="1" />
+                                        <div class="emoji">😐</div>
+                                        Med
                                     </label>
                                     <label class="btn btn-default">
-                                        <input type="radio" name="sideeffects" value="2" /> High
+                                        <input type="radio" name="sideeffects" value="2" />
+                                        <div class="emoji">😟</div>
+                                        High
                                     </label>
                                 </div>
                             </div>
@@ -99,13 +117,19 @@
                             <div class="col-xs-6 text-right">
                                 <div class="btn-group" data-toggle="buttons">
                                     <label class="btn btn-default active">
-                                        <input type="radio" name="testing" value="0" checked /> Low
+                                        <input type="radio" name="testing" value="0" checked />
+                                        <div class="emoji">😀</div>
+                                        Low
                                     </label>
                                     <label class="btn btn-default">
-                                        <input type="radio" name="testing" value="1" /> Med
+                                        <input type="radio" name="testing" value="1" />
+                                        <div class="emoji">😐</div>
+                                        Med
                                     </label>
                                     <label class="btn btn-default">
-                                        <input type="radio" name="testing" value="2" /> High
+                                        <input type="radio" name="testing" value="2" />
+                                        <div class="emoji">😟</div>
+                                        High
                                     </label>
                                 </div>
                             </div>
@@ -120,23 +144,23 @@
                         </div>
                         <div class="row">
                             <div class="col-xs-12 text-center">
-                                <button class="btn send-alt">???</button>
-                                <button class="btn send-alt">Split</button>
-                                <button class="btn btn-success send">Send</button>
+                                <button class="btn btn-default send-alt">???</button>
+                                <button class="btn btn-default send-alt">Split</button>
+                                <button class="btn btn-success send">Vote</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div id="social-box" class="col-md-6 col-lg-4">
+                <div id="social-box" class="col-md-6">
                     <div class="social-box box">
                         <div class="row">
                             <div class="col-xs-12">
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <td width="75%">User</td>
-                                            <td width="25%" class="text-right">Points</td>
+                                            <td width="75%">Name</td>
+                                            <td width="25%" class="text-right">Vote</td>
                                         </tr>
                                     </thead>
                                     <tbody>

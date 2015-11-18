@@ -22,9 +22,13 @@ div.box {
 }
 
 div.calc-box div.row {
-    line-height: 34px;
+    line-height: 50px;
     margin-bottom: 0.5em;
     margin-top: 0.5em;
+}
+
+div.calc-box div.btn-group div.emoji {
+    font-size: 2em;
 }
 
 div.total-box div.total {
