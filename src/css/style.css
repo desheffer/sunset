@@ -1,28 +1,19 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:100,400);
-
-html {
-    /* background: url(background.jpg) no-repeat center center fixed; */
-    background: #fff;
-    background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    -webkit-background-size: cover;
-}
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700|Patua+One);
 
 body {
     background: none;
-    font-family: 'Lato';
+    font-family: 'Ubuntu Mono', Consolas, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
     margin: 1em auto;
 }
 
 h1 {
+    color: #333;
+    font-family: 'Patua One';
     font-size: 6em;
-    font-weight: 100;
     margin: 0.5em 0;
 }
 
 div.box {
-    /* background-color: rgba(255, 255, 255, 0.6); */
     background-color: #eee;
     border: 1px solid #ddd;
     border-radius: 2px;
@@ -36,14 +27,21 @@ div.calc-box div.row {
     margin-top: 0.5em;
 }
 
-div.total-box div.row {
+div.total-box div.total {
     font-size: 2em;
-    font-weight: 100;
-    margin-top: 0.75em;
+    margin-bottom: 1em;
+    margin-top: 1em;
 }
 
 div.total-box div.row span.value {
     border-bottom: 1px solid #ccc;
-    font-size: 2em;
     padding: 0 0.1em;
+}
+
+div.social-box table {
+    min-height: 20em;
+}
+
+div.social-box table tbody td {
+    font-size: 1.5em;
 }

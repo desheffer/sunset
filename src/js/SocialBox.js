@@ -18,14 +18,21 @@
                 var room = snapshot.val();
 
                 var tbody = box.find('table tbody').html('');
+                var tr;
+
+                if (!room || room.length === 0) {
+                    tr = $('<tr>');
+                    $('<td colspan="2" class="text-center">').text('Nothing to show yet').appendTo(tr);
+                    tr.appendTo(tbody);
+                }
 
                 for (var i in room) {
                     var player = room[i];
 
-                    var tr = $('<tr>');
+                    tr = $('<tr>');
                     $('<td>').text(player.user.displayName).appendTo(tr);
                     $('<td class="text-right">').text(player.points).appendTo(tr);
-                    tr.prependTo(tbody);
+                    tr.appendTo(tbody);
                 }
             });
 

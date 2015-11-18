@@ -10,7 +10,7 @@
 
         var fibMap = [0.5, 1, 2, 3, 5, 5, 8, 8, 8];
 
-        $(box).find('input:radio').on('change', function() {
+        function calculate() {
             points = 0;
 
             $(box).find('input:radio:checked').each(function() {
@@ -21,7 +21,11 @@
 
             $(box).find('.total .value').text(points);
             $(box).find('.total .plural').toggle(points !== 1);
-        });
+        }
+
+        calculate();
+
+        $(box).find('input:radio').on('change', calculate);
 
         $(box).find('button.send').on('click', function() {
             $(self).trigger({
