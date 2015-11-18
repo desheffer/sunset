@@ -10,12 +10,12 @@
         var firebase = new Firebase(window.Sunset.firebaseURL);
         var user;
 
-        function updateLinks() {
+        function update() {
             if (user) {
-                $('body').addClass('logged-in');
+                $('body').removeClass('not-logged-in');
                 box.find('.username').text(user.displayName);
             } else {
-                $('body').removeClass('logged-in');
+                $('body').addClass('not-logged-in');
                 box.find('.username').text('---------');
             }
 
@@ -47,7 +47,7 @@
                     user.displayName = user.google.displayName;
                 }
 
-                updateLinks();
+                update();
 
                 $(self).trigger({
                     type: 'userchange.sunset',

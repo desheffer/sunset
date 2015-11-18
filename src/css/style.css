@@ -49,6 +49,7 @@ div.content {
 div.content div.login {
     background-color: rgba(255, 255, 255, 0.75);
     bottom: 0;
+    display: none;
     font-size: 4em;
     left: 0;
     padding: 2em;
@@ -59,6 +60,6 @@ div.content div.login {
     z-index: 99;
 }
 
-body.logged-in div.content div.login {
-    display: none;
+body.not-logged-in div.content div.login {
+    display: block;
 }
