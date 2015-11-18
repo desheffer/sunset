@@ -1,5 +1,4 @@
 /* global Firebase: false */
-/* global alert: false */
 (function(Firebase) {
     'use strict';
 
@@ -11,8 +10,9 @@
         var firebase = new Firebase(window.Sunset.firebaseURL);
         var room = 'x';
         var user;
-
         var presence;
+
+        var hide = true;
 
         firebase.child('presence').child(room)
             .on('value', function(snapshot) {
@@ -22,9 +22,13 @@
                 var tr;
 
                 if (!room || room.length === 0) {
+                    hide = true;
+
                     tr = $('<tr>');
                     $('<td colspan="2" class="text-center">').text('Nothing to show yet').appendTo(tr);
                     tr.appendTo(tbody);
+
+                    return false;
                 }
 
                 for (var i in room) {
@@ -32,7 +36,7 @@
 
                     tr = $('<tr>');
                     $('<td>').text(player.user.displayName).appendTo(tr);
-                    $('<td class="text-right">').text(player.points).appendTo(tr);
+                    $('<td class="text-right points">').text(hide ? 'Hidden' : player.points).appendTo(tr);
                     tr.appendTo(tbody);
                 }
             });
@@ -51,9 +55,10 @@
 
         this.pointsChanged = function(e) {
             if (!presence || !user) {
-                alert('Please log in first!');
                 return;
             }
+
+            hide = false;
 
             presence.set({
                 user: {
