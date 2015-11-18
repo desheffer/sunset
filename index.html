@@ -14,90 +14,137 @@
     </head>
 
     <body>
-        <div class="col-md-4 col-md-offset-4 pane">
-            <header>
-                <h1 class="text-center">&ldquo;Sunset&rdquo;</h1>
-            </header>
-
-            <div class="row line">
-                <div class="col-xs-6">
-                    <u>S</u>ize
+        <div class="container">
+            <div id="login-box" class="row">
+                <div class="col-md-8 col-md-offset-2 text-right">
+                    <span class="username">----------</span> |
+                    <span class="links">------</span>
                 </div>
-                <div class="col-xs-6 text-right">
-                    <div class="btn-group" data-toggle="buttons">
-                        <label class="btn btn-default active">
-                            <input type="radio" name="size" value="0" checked /> 0
-                        </label>
-                        <label class="btn btn-default">
-                            <input type="radio" name="size" value="1" /> 1
-                        </label>
-                        <label class="btn btn-default">
-                            <input type="radio" name="size" value="2" /> 2
-                        </label>
+            </div>
+
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <header>
+                        <h1 class="text-center">&ldquo;Sunset&rdquo;</h1>
+                    </header>
+                </div>
+            </div>
+
+            <div id="point-box" class="col-md-4 col-md-offset-2">
+                <div class="calc-box box">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <u>S</u>ize
+                        </div>
+                        <div class="col-xs-6 text-right">
+                            <div class="btn-group" data-toggle="buttons">
+                                <label class="btn btn-default active">
+                                    <input type="radio" name="size" value="0" checked /> 0
+                                </label>
+                                <label class="btn btn-default">
+                                    <input type="radio" name="size" value="1" /> 1
+                                </label>
+                                <label class="btn btn-default">
+                                    <input type="radio" name="size" value="2" /> 2
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <u>Un</u>certainty
+                        </div>
+                        <div class="col-xs-6 text-right">
+                            <div class="btn-group" data-toggle="buttons">
+                                <label class="btn btn-default active">
+                                    <input type="radio" name="uncertainty" value="0" checked /> 0
+                                </label>
+                                <label class="btn btn-default">
+                                    <input type="radio" name="uncertainty" value="1" /> 1
+                                </label>
+                                <label class="btn btn-default">
+                                    <input type="radio" name="uncertainty" value="2" /> 2
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <u>S</u>ide <u>E</u>ffects
+                        </div>
+                        <div class="col-xs-6 text-right">
+                            <div class="btn-group" data-toggle="buttons">
+                                <label class="btn btn-default active">
+                                    <input type="radio" name="sideeffects" value="0" checked /> 0
+                                </label>
+                                <label class="btn btn-default">
+                                    <input type="radio" name="sideeffects" value="1" /> 1
+                                </label>
+                                <label class="btn btn-default">
+                                    <input type="radio" name="sideeffects" value="2" /> 2
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <u>T</u>esting
+                        </div>
+                        <div class="col-xs-6 text-right">
+                            <div class="btn-group" data-toggle="buttons">
+                                <label class="btn btn-default active">
+                                    <input type="radio" name="testing" value="0" checked /> 0
+                                </label>
+                                <label class="btn btn-default">
+                                    <input type="radio" name="testing" value="1" /> 1
+                                </label>
+                                <label class="btn btn-default">
+                                    <input type="radio" name="testing" value="2" /> 2
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="total-box box total">
+                    <div class="row">
+                        <div class="col-xs-12 text-center">
+                            <span class="value">0.5</span> point<span class="plural">s</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 text-center">
+                            <button class="btn btn-primary btn-lg send">Send</button>
+                            <button class="btn btn-info btn-lg send-alt">???</button>
+                            <button class="btn btn-info btn-lg send-alt">Split</button>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="row line">
-                <div class="col-xs-6">
-                    <u>Un</u>certainty
-                </div>
-                <div class="col-xs-6 text-right">
-                    <div class="btn-group" data-toggle="buttons">
-                        <label class="btn btn-default active">
-                            <input type="radio" name="uncertainty" value="0" checked /> 0
-                        </label>
-                        <label class="btn btn-default">
-                            <input type="radio" name="uncertainty" value="1" /> 1
-                        </label>
-                        <label class="btn btn-default">
-                            <input type="radio" name="uncertainty" value="2" /> 2
-                        </label>
+            <div id="social-box" class="col-md-4">
+                <div class="social-box box">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th width="75%">User</th>
+                                        <th width="25%" class="text-right">Points</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
                     </div>
-                </div>
-            </div>
-
-            <div class="row line">
-                <div class="col-xs-6">
-                    <u>S</u>ide <u>E</u>ffects
-                </div>
-                <div class="col-xs-6 text-right">
-                    <div class="btn-group" data-toggle="buttons">
-                        <label class="btn btn-default active">
-                            <input type="radio" name="sideeffects" value="0" checked /> 0
-                        </label>
-                        <label class="btn btn-default">
-                            <input type="radio" name="sideeffects" value="1" /> 1
-                        </label>
-                        <label class="btn btn-default">
-                            <input type="radio" name="sideeffects" value="2" /> 2
-                        </label>
+                    <div class="row">
+                        <div class="col-xs-12 text-right">
+                            <button class="btn btn-warning btn-xs clear">Clear</button>
+                        </div>
                     </div>
-                </div>
-            </div>
-
-            <div class="row line">
-                <div class="col-xs-6">
-                    <u>T</u>esting
-                </div>
-                <div class="col-xs-6 text-right">
-                    <div class="btn-group" data-toggle="buttons">
-                        <label class="btn btn-default active">
-                            <input type="radio" name="testing" value="0" checked /> 0
-                        </label>
-                        <label class="btn btn-default">
-                            <input type="radio" name="testing" value="1" /> 1
-                        </label>
-                        <label class="btn btn-default">
-                            <input type="radio" name="testing" value="2" /> 2
-                        </label>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row total">
-                <div class="col-xs-12 text-center">
-                    <span class="value" id="total">0.5</span> sprint point<span id="total-plural">s</span>
                 </div>
             </div>
         </div>

@@ -51,6 +51,9 @@ module.exports = function(grunt) {
           banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n',
         },
         src: [
+          'src/js/LoginBox.js',
+          'src/js/PointBox.js',
+          'src/js/SocialBox.js',
           'src/js/config.js',
           'src/js/app.js',
         ],

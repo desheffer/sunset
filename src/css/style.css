@@ -12,35 +12,37 @@ html {
 body {
     background: none;
     font-family: 'Lato';
-    margin: 5em auto;
+    margin: 1em auto;
 }
 
 h1 {
     font-size: 6em;
     font-weight: 100;
-    margin: 0 0 0.5em 0;
+    margin: 0.5em 0;
 }
 
-div.pane {
+div.box {
     /* background-color: rgba(255, 255, 255, 0.6); */
     background-color: #eee;
     border: 1px solid #ddd;
-    padding-bottom: 0.5em;
-    padding-top: 0.5em;
-}
-
-div.row.line {
-    line-height: 34px;
+    border-radius: 2px;
     margin-top: 1em;
+    padding: 1em;
 }
 
-div.row.total {
+div.calc-box div.row {
+    line-height: 34px;
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+}
+
+div.total-box div.row {
     font-size: 2em;
     font-weight: 100;
-    margin-top: 2em;
+    margin-top: 0.75em;
 }
 
-div.row.total span.value {
+div.total-box div.row span.value {
     border-bottom: 1px solid #ccc;
     font-size: 2em;
     padding: 0 0.1em;
