@@ -8,69 +8,81 @@
         // var self = this;
 
         var firebase = new Firebase(window.Sunset.firebaseURL);
-        var room = 'x';
-        var user;
-        var presence;
+        var roomRef = firebase.child('player').child('my-room');
+        var playerRef;
 
+        var tbody = box.find('table tbody');
         var hide = true;
 
-        firebase.child('presence').child(room)
-            .on('value', function(snapshot) {
-                var room = snapshot.val();
+        roomRef
+            .on('value', function(roomSnapshot) {
+                tbody.html('');
 
-                var tbody = box.find('table tbody').html('');
-                var tr;
+                roomSnapshot.forEach(function(playerSnapshot) {
+                    var player = playerSnapshot.val();
 
-                if (!room || room.length === 0) {
-                    hide = true;
+                    var vote;
+                    if (player.vote === undefined) {
+                        vote = '---';
+                    } else if (hide) {
+                        vote = 'Hidden';
+                    } else {
+                        vote = player.vote.value;
+                    }
 
-                    tr = $('<tr>');
-                    $('<td colspan="2" class="text-center">').text('Nothing to show yet').appendTo(tr);
-                    tr.appendTo(tbody);
-
-                    return false;
-                }
-
-                for (var i in room) {
-                    var player = room[i];
-
-                    tr = $('<tr>');
+                    var tr = $('<tr>');
                     $('<td>').text(player.user.displayName).appendTo(tr);
-                    $('<td class="text-right">').text(hide ? 'Hidden' : player.vote).appendTo(tr);
+                    $('<td class="text-right">').text(vote).appendTo(tr);
                     tr.appendTo(tbody);
-                }
+                });
             });
 
-        this.userChanged = function(newUser) {
-            // Remove presence for old session.
-            if (presence) {
-                presence.remove();
-                presence = undefined;
+        this.userChanged = function(user) {
+            // Remove player for old session.
+            if (playerRef) {
+                playerRef.remove();
+                playerRef = undefined;
             }
 
-            user = newUser;
-            presence = firebase.child('presence').child(room).child(user.uid);
-            presence.onDisconnect().remove();
+            if (!user) {
+                return;
+            }
+
+            playerRef = roomRef.push();
+            playerRef.onDisconnect().remove();
+
+            // Set the current player's identity.
+            playerRef.set({
+                user: {
+                    uid: user.uid,
+                    displayName: user.displayName,
+                },
+            });
         };
 
         this.voteChanged = function(e) {
-            if (!presence || !user) {
+            if (!playerRef) {
                 return;
             }
 
             hide = false;
 
-            presence.set({
-                user: {
-                    displayName: user.displayName,
+            // Update the current player's vote.
+            playerRef.update({
+                vote: {
+                    value: e.vote,
+                    timestamp: e.timeStamp,
                 },
-                vote: e.vote,
-                timestamp: e.timeStamp,
             });
         };
 
         $(box).find('button.clear').on('click', function() {
-            firebase.child('presence').child(room).remove();
+            // Clear each player's vote.
+            roomRef.once('value', function(roomSnapshot) {
+                roomSnapshot.forEach(function(playerSnapshot) {
+                    playerSnapshot.ref().child('vote').remove();
+                });
+            });
         });
     };
 })(Firebase);

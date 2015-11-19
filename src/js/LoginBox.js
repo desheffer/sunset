@@ -13,10 +13,10 @@
         function update() {
             if (user) {
                 $('body').removeClass('not-logged-in');
-                box.find('.username').text(user.displayName);
+                box.find('.name').text(user.displayName);
             } else {
                 $('body').addClass('not-logged-in');
-                box.find('.username').text('---------');
+                box.find('.name').text('---------');
             }
 
             box.find('.links').html('');
