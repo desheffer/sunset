@@ -13,6 +13,17 @@ h1 {
     margin: 0.5em 0;
 }
 
+.icon img {
+  display: inline-block;
+  height: 3ex;
+  line-height: normal;
+  margin: -.2ex .15em .2ex;
+  min-height: 20px;
+  min-width: 20px;
+  vertical-align: middle;
+  width: 3.1ex;
+}
+
 div.box {
     background-color: #eee;
     border: 1px solid #ddd;
@@ -25,10 +36,6 @@ div.calc-box div.row {
     line-height: 50px;
     margin-bottom: 0.5em;
     margin-top: 0.5em;
-}
-
-div.calc-box div.btn-group div.emoji {
-    font-size: 2em;
 }
 
 div.total-box div.total {

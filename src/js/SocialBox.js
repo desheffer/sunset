@@ -1,4 +1,4 @@
-/* global Firebase: false */
+/* global Firebase */
 (function(Firebase) {
     'use strict';
 

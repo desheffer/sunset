@@ -94,6 +94,15 @@ module.exports = function(grunt) {
       },
     },
 
+    copy: {
+      images: {
+        expand: true,
+        flatten: true,
+        src: 'src/images/*',
+        dest: 'dist/',
+      },
+    },
+
   });
 
   grunt.registerTask('build', [
@@ -102,6 +111,7 @@ module.exports = function(grunt) {
     'concat',
     'cssmin',
     'uglify',
+    'copy',
   ]);
 
   grunt.registerTask('default', ['build']);
