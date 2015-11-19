@@ -12,30 +12,30 @@
         var playerRef;
 
         var tbody = box.find('table tbody');
-        var hide = true;
 
-        roomRef
-            .on('value', function(roomSnapshot) {
-                tbody.html('');
+        roomRef.on('child_added', function(playerSnapshot) {
+            var player = playerSnapshot.val();
 
-                roomSnapshot.forEach(function(playerSnapshot) {
-                    var player = playerSnapshot.val();
+            var tr = $('<tr>').attr('data-player', playerSnapshot.key());
+            $('<td>').text(player.user.displayName).appendTo(tr);
+            $('<td class="text-right vote">').appendTo(tr);
+            tr.appendTo(tbody);
 
-                    var vote;
-                    if (player.vote === undefined) {
-                        vote = '---';
-                    } else if (hide) {
-                        vote = 'Hidden';
-                    } else {
-                        vote = player.vote.value;
-                    }
+            tr.find('td.vote').html(player.vote ? '<span class="value">' + player.vote.value + '</span>' : '');
+        });
 
-                    var tr = $('<tr>');
-                    $('<td>').text(player.user.displayName).appendTo(tr);
-                    $('<td class="text-right">').text(vote).appendTo(tr);
-                    tr.appendTo(tbody);
-                });
-            });
+        roomRef.on('child_removed', function(playerSnapshot) {
+            var tr = $(tbody).find('tr[data-player="' + playerSnapshot.key() + '"]');
+            tr.remove();
+        });
+
+        roomRef.on('child_changed', function(playerSnapshot) {
+            var player = playerSnapshot.val();
+
+            var tr = $(tbody).find('tr[data-player="' + playerSnapshot.key() + '"]');
+
+            tr.find('td.vote').html(player.vote ? '<span class="value">' + player.vote.value + '</span>' : '');
+        });
 
         this.userChanged = function(user) {
             // Remove player for old session.
@@ -58,14 +58,22 @@
                     displayName: user.displayName,
                 },
             });
+
+            playerRef.on('value', function(playerSnapshot) {
+                var player = playerSnapshot.val();
+
+                if (player.vote !== undefined) {
+                    tbody.removeClass('has-not-voted');
+                } else {
+                    tbody.addClass('has-not-voted');
+                }
+            });
         };
 
         this.voteChanged = function(e) {
             if (!playerRef) {
                 return;
             }
-
-            hide = false;
 
             // Update the current player's vote.
             playerRef.update({
