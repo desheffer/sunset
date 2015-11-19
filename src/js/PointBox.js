@@ -27,19 +27,19 @@
 
         $(box).find('input:radio').on('change', calculate);
 
-        $(box).find('button.send').on('click', function() {
+        $(box).find('button.vote').on('click', function() {
             $(self).trigger({
                 type: 'change.sunset',
-                points: points,
+                vote: points,
             });
 
             return false;
         });
 
-        $(box).find('button.send-alt').on('click', function() {
+        $(box).find('button.vote-alt').on('click', function() {
             $(self).trigger({
                 type: 'change.sunset',
-                points: $(this).text(),
+                vote: $(this).text(),
             });
 
             return false;

@@ -36,7 +36,7 @@
 
                     tr = $('<tr>');
                     $('<td>').text(player.user.displayName).appendTo(tr);
-                    $('<td class="text-right points">').text(hide ? 'Hidden' : player.points).appendTo(tr);
+                    $('<td class="text-right">').text(hide ? 'Hidden' : player.vote).appendTo(tr);
                     tr.appendTo(tbody);
                 }
             });
@@ -53,7 +53,7 @@
             presence.onDisconnect().remove();
         };
 
-        this.pointsChanged = function(e) {
+        this.voteChanged = function(e) {
             if (!presence || !user) {
                 return;
             }
@@ -64,7 +64,7 @@
                 user: {
                     displayName: user.displayName,
                 },
-                points: e.points,
+                vote: e.vote,
                 timestamp: e.timeStamp,
             });
         };
