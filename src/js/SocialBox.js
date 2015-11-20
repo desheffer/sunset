@@ -13,28 +13,49 @@
 
         var tbody = box.find('table tbody');
 
+        function renderPlayer(player, tr) {
+            var value = '';
+            var parts = '';
+
+            if (player.vote !== undefined) {
+                value = $('<span class="mask">').text(player.vote.value);
+
+                parts = $('<span class="mask">');
+                if (player.vote.parts !== undefined) {
+                    for (var i in player.vote.parts) {
+                        var img = player.vote.parts[i];
+                        parts.append('<img class="icon" src="dist/' + img + '.png" />');
+                    }
+                }
+            }
+
+            tr.find('td.parts').html(parts);
+            tr.find('td.value').html(value);
+        }
+
         roomRef.on('child_added', function(playerSnapshot) {
             var player = playerSnapshot.val();
 
             var tr = $('<tr>').attr('data-player', playerSnapshot.key());
             $('<td>').text(player.user.displayName).appendTo(tr);
-            $('<td class="text-right vote">').appendTo(tr);
+            $('<td class="text-center parts">').appendTo(tr);
+            $('<td class="text-right value">').appendTo(tr);
             tr.appendTo(tbody);
 
-            tr.find('td.vote').html(player.vote ? '<span class="value">' + player.vote.value + '</span>' : '');
+            renderPlayer(player, tr);
         });
 
         roomRef.on('child_removed', function(playerSnapshot) {
             var tr = $(tbody).find('tr[data-player="' + playerSnapshot.key() + '"]');
+
             tr.remove();
         });
 
         roomRef.on('child_changed', function(playerSnapshot) {
             var player = playerSnapshot.val();
-
             var tr = $(tbody).find('tr[data-player="' + playerSnapshot.key() + '"]');
 
-            tr.find('td.vote').html(player.vote ? '<span class="value">' + player.vote.value + '</span>' : '');
+            renderPlayer(player, tr);
         });
 
         this.userChanged = function(user) {
@@ -79,6 +100,7 @@
             playerRef.update({
                 vote: {
                     value: e.vote,
+                    parts: e.parts ? e.parts : [],
                     timestamp: e.timeStamp,
                 },
             });

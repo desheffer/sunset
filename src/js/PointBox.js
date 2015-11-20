@@ -7,14 +7,17 @@
         var self = this;
 
         var points = 0.5;
+        var parts = [0, 0, 0, 0];
 
         var fibMap = [0.5, 1, 2, 3, 5, 5, 8, 8, 8];
 
         function calculate() {
             points = 0;
+            parts = [];
 
             $(box).find('input:radio:checked').each(function() {
                 points += parseInt($(this).val());
+                parts.push($(this).val());
             });
 
             points = fibMap[points];
@@ -31,6 +34,7 @@
             $(self).trigger({
                 type: 'change.sunset',
                 vote: points,
+                parts: parts,
             });
 
             return false;
