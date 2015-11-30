@@ -95,6 +95,12 @@ module.exports = function(grunt) {
     },
 
     copy: {
+      html: {
+        expand: true,
+        flatten: true,
+        src: 'src/index.html',
+        dest: 'dist/',
+      },
       images: {
         expand: true,
         flatten: true,
