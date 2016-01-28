@@ -24,7 +24,7 @@
                 if (player.vote.parts !== undefined) {
                     for (var i in player.vote.parts) {
                         var img = player.vote.parts[i];
-                        parts.append('<img class="icon" src="dist/' + img + '.png" />');
+                        parts.append('<img class="icon" src="' + img + '.png" />');
                     }
                 }
             }
