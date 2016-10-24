@@ -12,6 +12,7 @@
         var playerRef;
 
         var tbody = box.find('table tbody');
+        var tfoot = box.find('table tfoot');
 
         function renderPlayer(player, tr) {
             var value = '';
@@ -33,6 +34,30 @@
             tr.find('td.value').html(value);
         }
 
+        function renderAverage(tr) {
+            var playerCount = 0;
+            var runningTotal = 0;
+
+            roomRef.once('value', function(roomSnapshot) {
+                roomSnapshot.forEach(function(playerSnapshot) {
+                    var player = playerSnapshot.val();
+
+                    if (player.vote === undefined) {
+                        return;
+                    }
+
+                    if (!isNaN(player.vote.value)) {
+                        playerCount++;
+                        runningTotal += player.vote.value;
+                    }
+                });
+            });
+
+            var average = playerCount === 0 ? '' : runningTotal / playerCount;
+            var value = $('<span class="mask">').text(average.toFixed(2));
+            tr.find('td:nth-child(3)').html(value);
+        }
+
         roomRef.on('child_added', function(playerSnapshot) {
             var player = playerSnapshot.val();
 
@@ -41,21 +66,27 @@
             $('<td class="text-center parts">').appendTo(tr);
             $('<td class="text-right value">').appendTo(tr);
             tr.appendTo(tbody);
-
             renderPlayer(player, tr);
+
+            var averageTr = $(tfoot).find('tr');
+            renderAverage(averageTr);
         });
 
         roomRef.on('child_removed', function(playerSnapshot) {
             var tr = $(tbody).find('tr[data-player="' + playerSnapshot.key() + '"]');
-
             tr.remove();
+
+            var averageTr = $(tfoot).find('tr');
+            renderAverage(averageTr);
         });
 
         roomRef.on('child_changed', function(playerSnapshot) {
             var player = playerSnapshot.val();
             var tr = $(tbody).find('tr[data-player="' + playerSnapshot.key() + '"]');
-
             renderPlayer(player, tr);
+
+            var averageTr = $(tfoot).find('tr');
+            renderAverage(averageTr);
         });
 
         this.userChanged = function(user) {
@@ -85,8 +116,10 @@
 
                 if (player.vote !== undefined) {
                     tbody.removeClass('has-not-voted');
+                    tfoot.removeClass('has-not-voted');
                 } else {
                     tbody.addClass('has-not-voted');
+                    tfoot.addClass('has-not-voted');
                 }
             });
         };

@@ -49,8 +49,9 @@ div.social-box table tbody td {
     font-size: 1.5em;
 }
 
+div.social-box table tfoot.has-not-voted span.mask,
 div.social-box table tbody.has-not-voted span.mask {
-    background-color: #999;
+    background-color: #333;
     display: block;
     overflow: hidden;
     text-indent: -999px;
